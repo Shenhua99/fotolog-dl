@@ -42,7 +42,7 @@ func processImage(url string) error {
 	imageURL, _ := doc.Find("a.wall_img_container_big > img").Attr("src")
 
 	// creating the image file
-	filename := fmt.Sprintf(outputFolder+"/image-%s.jpg", uuid.NewV4())
+	filename := fmt.Sprintf(outputFolder+"/image-%s.jpg")
 	file, err := os.Create(filename)
 	if err != nil {
 		return fmt.Errorf("could not create image file %s: %v", filename, err)
